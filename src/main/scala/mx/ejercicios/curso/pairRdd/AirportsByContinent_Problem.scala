@@ -10,20 +10,20 @@ import org.apache.spark.{SparkConf, SparkContext}
   key : Pais al que pertenece el aeropuerto
   Value : nombre del aeropuerto
 
-  Imprima el RDD con los aeropuertos de NO pertenecen a paises terroristas
-  Paises terroristas son : "United Stated, "Israel", "United Kingdom", "France", "Saudi Arabia"
+  Imprima el RDD con los aeropuertos que pertenecen al continente americano, Africano, Indoeuropeo
+  Nota : cree una lista con los nombres de paises agrupado por continente
 
-  Guarde los resultados en un archivo de texto "output/AirportsNotInTerroristSoil.txt"
+  Guarde los resultados en un archivo de texto "output/AirportsByContinent.txt"
 
  */
 
-object AirportsNotTerroristCountry_Problem {
-def main(args: Array[String]) {
+object AirportsByContinent_Problem {
+  def main(args: Array[String]) {
     Logger.getLogger("org").setLevel(Level.ERROR)
     val conf = new SparkConf().setAppName("airports").setMaster("local")
     val sc = new SparkContext(conf)
 
-    val airportsRDD = sc.textFile("in/airports.text")
+    val airportsRDD = sc.textFile("in/AirportsByContinent.text")
     //
     airportsRDD.take(10).foreach(println)
 

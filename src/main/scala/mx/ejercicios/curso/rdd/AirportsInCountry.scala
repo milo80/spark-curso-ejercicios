@@ -5,7 +5,7 @@ import org.apache.spark.{SparkConf, SparkContext}
 
 /*
   Crea el codigo para leer los datos del archivo "in/airports.text"
-  Cree un nuevo RDD con todos los aeropuertod de Canada y guardelos en
+  Cree un nuevo RDD con todos los aeropuertos de Canada y guardelos en
   el archivo "output/airports_in_canada.txt"
 
   el archivo de salida solo debe de contener "Name of airport", "Main City .." "Country ..."

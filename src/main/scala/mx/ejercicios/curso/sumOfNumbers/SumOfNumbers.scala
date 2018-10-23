@@ -20,11 +20,12 @@ object SumOfNumbers {
         val sc = new SparkContext(conf)
 
         val lines = sc.textFile("in/prime_nums.text")
-
+        lines.take(5).foreach(println)
         val numbers = lines.flatMap(line => line.split("\\s+"))
-
+        println("   ----- -  ")
+        numbers.foreach(println)
         val validNumbers = numbers.filter(number => !number.isEmpty)
-
+        println("validNumbers es del tipo : "+validNumbers.getClass.getSimpleName)
         val intNumbers = validNumbers.map(number => number.toInt)
 
         println("Sum is: " + intNumbers.reduce((x, y) => x + y))
